@@ -1,0 +1,84 @@
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+<https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_3/1.0.0> rdf:type owl:Ontology ;
+                                                                                                   owl:imports <https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather> rdf:type owl:ObjectProperty .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother> rdf:type owl:ObjectProperty .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:subPropertyOf <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor> .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor> rdf:type owl:ObjectProperty ;
+                                                                                       rdfs:subPropertyOf <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasRelation> ;
+                                                                                       owl:inverseOf <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isAncestorOf> ;
+                                                                                       rdf:type owl:TransitiveProperty .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandfather
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandfather> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:subPropertyOf <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent> ;
+                                                                                          owl:inverseOf <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandfatherOf> ;
+                                                                                          owl:propertyChainAxiom ( <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent>
+                                                                                                                   <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasFather>
+                                                                                                                 ) .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandmother
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandmother> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:subPropertyOf <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent> ;
+                                                                                          owl:inverseOf <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandmotherOf> ;
+                                                                                          owl:propertyChainAxiom ( <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent>
+                                                                                                                   <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasMother>
+                                                                                                                 ) .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasGrandparent> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:subPropertyOf <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasAncestor> ;
+                                                                                          owl:inverseOf <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandparentOf> ;
+                                                                                          owl:propertyChainAxiom ( <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent>
+                                                                                                                   <http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_2.owl#hasParent>
+                                                                                                                 ) .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasRelation
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#hasRelation> rdf:type owl:ObjectProperty ,
+                                                                                                owl:SymmetricProperty .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isAncestorOf
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isAncestorOf> rdf:type owl:ObjectProperty .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandfatherOf
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandfatherOf> rdf:type owl:ObjectProperty .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandmotherOf
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandmotherOf> rdf:type owl:ObjectProperty .
+
+
+###  http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandparentOf
+<http://owl.cs.manchester.ac.uk/tutorials/fhkbtutorial/fhkb_chapter_3.owl#isGrandparentOf> rdf:type owl:ObjectProperty .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
