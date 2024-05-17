@@ -1,0 +1,170 @@
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+<https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#hasFather
+:hasFather rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParent ;
+           owl:inverseOf :isFatherOf .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#hasMother
+:hasMother rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParent ;
+           owl:inverseOf :isMotherOf .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#hasParent
+:hasParent rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isParentOf .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#isFatherOf
+:isFatherOf rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#isMotherOf
+:isMotherOf rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#isParentOf
+:isParentOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Charles_Herbert_Rever_1895
+:Charles_Herbert_Rever_1895 rdf:type owl:NamedIndividual ,
+                                     owl:Thing .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Clare_Bright_1966
+:Clare_Bright_1966 rdf:type owl:NamedIndividual ,
+                            owl:Thing ;
+                   :hasFather :Peter_William_Bright_1941 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#David_Bright_1934
+:David_Bright_1934 rdf:type owl:NamedIndividual ;
+                   :hasFather :William_George_Bright_1901 ;
+                   :hasMother :Iris_Ellen_Archer_1906 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Eileen_Mary_Rever_1929
+:Eileen_Mary_Rever_1929 rdf:type owl:NamedIndividual ,
+                                 owl:Thing ;
+                        :hasFather :Charles_Herbert_Rever_1895 ;
+                        :hasMother :Violet_Sylvia_Steward_1894 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Ian_Bright_1959
+:Ian_Bright_1959 rdf:type owl:NamedIndividual ,
+                          owl:Thing ;
+                 :hasFather :John_Bright_1930 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Iris_Ellen_Archer_1906
+:Iris_Ellen_Archer_1906 rdf:type owl:NamedIndividual ,
+                                 owl:Thing .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#James_Bright_1964
+:James_Bright_1964 rdf:type owl:NamedIndividual ,
+                            owl:Thing ;
+                   :hasFather :Peter_William_Bright_1941 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Janet_Bright_1964
+:Janet_Bright_1964 rdf:type owl:NamedIndividual ,
+                            owl:Thing ;
+                   :hasFather :John_Bright_1930 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#John_Bright_1930
+:John_Bright_1930 rdf:type owl:NamedIndividual ,
+                           owl:Thing ;
+                  :hasFather :William_George_Bright_1901 ;
+                  :hasMother :Iris_Ellen_Archer_1906 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Julie_Bright_1966
+:Julie_Bright_1966 rdf:type owl:NamedIndividual ,
+                            owl:Thing ;
+                   :hasFather :Peter_William_Bright_1941 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Margaret_Grace_Rever_1934
+:Margaret_Grace_Rever_1934 rdf:type owl:NamedIndividual ,
+                                    owl:Thing ;
+                           :hasFather :Charles_Herbert_Rever_1895 ;
+                           :hasMother :Violet_Sylvia_Steward_1894 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Mark_Anthony_Heath_1960
+:Mark_Anthony_Heath_1960 rdf:type owl:NamedIndividual ,
+                                  owl:Thing ;
+                         :hasMother :Eileen_Mary_Rever_1929 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Mark_Bright_1956
+:Mark_Bright_1956 rdf:type owl:NamedIndividual ,
+                           owl:Thing ;
+                  :hasFather :John_Bright_1930 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Nicholas_Charles_Heath_1964
+:Nicholas_Charles_Heath_1964 rdf:type owl:NamedIndividual ,
+                                      owl:Thing ;
+                             :hasMother :Eileen_Mary_Rever_1929 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Peter_William_Bright_1941
+:Peter_William_Bright_1941 rdf:type owl:NamedIndividual ,
+                                    owl:Thing ;
+                           :hasFather :William_George_Bright_1901 ;
+                           :hasMother :Iris_Ellen_Archer_1906 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Richard_John_Bright_1962
+:Richard_John_Bright_1962 rdf:type owl:NamedIndividual ,
+                                   owl:Thing ;
+                          :hasFather :David_Bright_1934 ;
+                          :hasMother :Margaret_Grace_Rever_1934 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Robert_David_Bright_1965
+:Robert_David_Bright_1965 rdf:type owl:NamedIndividual ,
+                                   owl:Thing ;
+                          :hasFather :David_Bright_1934 ;
+                          :hasMother :Margaret_Grace_Rever_1934 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#Violet_Sylvia_Steward_1894
+:Violet_Sylvia_Steward_1894 rdf:type owl:NamedIndividual ,
+                                     owl:Thing .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#William_Bright_1970
+:William_Bright_1970 rdf:type owl:NamedIndividual ,
+                              owl:Thing ;
+                     :hasFather :John_Bright_1930 .
+
+
+###  https://raw.githubusercontent.com/albertomarfoglia/ontologies-samples/main/fhkb_chapter_2/1.0.0#William_George_Bright_1901
+:William_George_Bright_1901 rdf:type owl:NamedIndividual ,
+                                     owl:Thing .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
